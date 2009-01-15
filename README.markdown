@@ -1,6 +1,6 @@
 # Introduction
 
-This is a fork of Rich Cavanaugh's php-hoptoad-notifier which is a rough first stab at a PHP [Hoptoad](http://hoptoadapp.com) notifier. Iv changed it slightly so that it doesn't rely on any PEAR packages. It uses spyc (included) to generate yaml and uses the phps curl. This is my preference as it means that I don't need to install additional packages on my servers.
+This is a fork of [Rich Cavanaugh's php-hoptoad-notifier](http://github.com/rich/php-hoptoad-notifier/tree/master) which is a rough first stab at a PHP [Hoptoad](http://hoptoadapp.com) notifier. Iv changed it slightly so that it doesn't rely on any PEAR packages. It uses spyc (included) to generate yaml and uses the phps curl. This is my preference as it means that I don't need to install additional packages on my servers.
 
 # Known Bugs
 
