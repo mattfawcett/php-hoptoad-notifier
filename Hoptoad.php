@@ -34,26 +34,21 @@ class Hoptoad
     );
 	require_once(dirname(__FILE__) . "/spyc.php");
 	$yaml = Spyc::YAMLDump(array("notice" => $body),4,60);
-    // $req->setBody($yaml);
-    // $req->sendRequest();
 
-	/////////////////////////////////////////
-	
 	$curlHandle = curl_init(); // init curl
 
     // cURL options
     curl_setopt($curlHandle, CURLOPT_URL, 'http://hoptoadapp.com/notices/'); // set the url to fetch
     curl_setopt($curlHandle, CURLOPT_POST, 1);	
+	curl_setopt($curlHandle, CURLOPT_HEADER, 0);
     curl_setopt($curlHandle, CURLOPT_TIMEOUT, 10); // time to wait in seconds
 	curl_setopt($curlHandle, CURLOPT_POSTFIELDS,  $yaml);
 	curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array("Accept: text/xml, application/xml", "Content-type: application/x-yaml"));
+	curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, 1);
 	
 
-    $content = curl_exec($curlHandle); // Make the call for sending the SMS
+    curl_exec($curlHandle); // Make the call for sending the SMS
     curl_close($curlHandle); // Close the connection 
-    
-	
-	////////////////////////////////////////
   }
   
   public static function tracer()
