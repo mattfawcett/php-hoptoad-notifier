@@ -1,6 +1,6 @@
 # Introduction
 
-This is a very rough first stab at a PHP [Hoptoad](http://hoptoadapp.com) notifier. I'm using it in production right now with success but that's no guarantee it won't take down your site, destroy your business and ransom your family.
+This is a fork of Rich Cavanaugh's php-hoptoad-notifier which is a rough first stab at a PHP [Hoptoad](http://hoptoadapp.com) notifier. Iv changed it slightly so that it doesn't rely on any PEAR packages. It uses spyc (included) to generate yaml and uses the phps curl. This is my preference as it means that I don't need to install additional packages on my servers.
 
 # Known Bugs
 
@@ -8,14 +8,10 @@ The Hoptoad::tracer() method does not generate traces that are 100% correct.
 
 # Requirements
 
-The notifier uses the Horde_Yaml class. You can install this class using the commands below.
+The notifier uses the php's curl librarys. To install on Ubuntu if you are using PHP 5 you would run
+	sudo apt-get install php5-curl
+	sudo /etc/init.d/apache2 reload
 
-    pear channel-discover pear.horde.org
-    pear install horde/yaml
-
-It also uses Pear's HTTP_Request:
-
-    pear install HTTP_Request
     
 # License
 
